@@ -1,5 +1,5 @@
 with open("/usr/share/dict/words") as dictionary:
-    library = dictionary.read().splitlines()
+    library = dictionary.read().lower().splitlines()
 print library, len(library)
 
 """
@@ -9,7 +9,7 @@ dictionary = open("/usr/share/dict/words")
 library = dictionary.readlines()
 """
 
-word = input("> ")
+word = input("> ").lower()
 print word
 
 def binarySearch():
@@ -19,6 +19,9 @@ def binarySearch():
     found = False
     while lower <= upper and not found:
         midpoint = (lower + upper) / 2
+        print "M: ", midpoint
+        print "U: ", upper
+        print "L: ", lower
         if library[midpoint] < word:
             lower = midpoint+1
         elif library[midpoint] > word:
@@ -27,8 +30,8 @@ def binarySearch():
             found = True
 
     if found:
-        print("The word is at", midpoint)
+        print "The word is at", midpoint
     else:
-        print("Word not found")
+        print "Word not found"
 
 binarySearch()
