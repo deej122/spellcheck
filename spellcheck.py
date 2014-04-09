@@ -8,6 +8,8 @@ keeps /n
 dictionary = open("/usr/share/dict/words")
 library = dictionary.readlines()
 """
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+vowels = 'aeiou'
 
 word = input("> ").lower()
 print word
@@ -30,8 +32,10 @@ def binarySearch():
             found = True
 
     if found:
-        print "The word is at", midpoint
+        print "The word is spelled correctly", midpoint
     else:
-        print "Word not found"
+    	correct(word)
+
+"""def correct(word):"""
 
 binarySearch()
